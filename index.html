@@ -2,119 +2,147 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
-<title>Posters Performance</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posters Performance</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#0b0b0b;color:white}
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0d0d0d;
+    color:white;
+}
 
 header{
-background:black;
-padding:15px 30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
+    background:#000;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:2px solid #ff3c00;
 }
 
-header h1{color:#ff3c00}
+header h1{
+    color:#ff3c00;
+    margin:0;
+    font-size:24px;
+}
 
 nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
-font-weight:bold;
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-nav a:hover{color:#ff3c00}
+nav a:hover{
+    color:#ff3c00;
+}
 
 .hero{
-height:80vh;
-background:linear-gradient(120deg,#ff3c00,#1a0000);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+    background:linear-gradient(120deg,#ff3c00,#1a0000);
+    padding:80px 20px;
+    text-align:center;
 }
 
-.hero h2{font-size:48px;margin-bottom:15px}
-.hero p{font-size:20px}
+.hero h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    opacity:0.9;
+}
 
 .section{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
+    padding:60px 30px;
 }
 
 .section h2{
-text-align:center;
-margin-bottom:40px;
-font-size:36px;
-color:#ff3c00;
+    text-align:center;
+    margin-bottom:40px;
+    color:#ff3c00;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+/* POSTERS GRID */
+.posters{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
-.card{
-background:#141414;
-border-radius:12px;
-padding:15px;
-text-align:center;
-box-shadow:0 0 20px rgba(255,60,0,0.2);
+.poster{
+    background:#111;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
-.card img{
-width:100%;
-border-radius:10px;
+.poster img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
 }
 
-.card h3{
-margin:15px 0;
+.poster h3{
+    margin:10px 0;
 }
 
 .btn{
-background:#ff3c00;
-border:none;
-color:white;
-padding:12px 25px;
-border-radius:6px;
-cursor:pointer;
-font-size:16px;
+    display:inline-block;
+    padding:10px 20px;
+    background:#ff3c00;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
 }
 
-.btn:hover{background:#ff5e2a}
-
-.form-box{
-max-width:400px;
-margin:auto;
-background:#111;
-padding:25px;
-border-radius:10px;
+.btn:hover{
+    background:#ff5a26;
 }
 
-.form-box input{
-width:100%;
-padding:10px;
-margin:8px 0;
-border-radius:5px;
-border:none;
+/* FORM */
+form{
+    max-width:420px;
+    margin:40px auto;
+    background:#111;
+    padding:25px;
+    border-radius:12px;
+}
+
+form h3{
+    text-align:center;
+    color:#ff3c00;
+}
+
+form input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:none;
+    border-radius:6px;
+}
+
+form button{
+    width:100%;
+    padding:12px;
+    background:#ff3c00;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
 }
 
 footer{
-background:black;
-text-align:center;
-padding:20px;
-margin-top:40px;
-color:#888;
+    text-align:center;
+    padding:20px;
+    background:#000;
+    border-top:2px solid #ff3c00;
+    margin-top:60px;
 }
 </style>
 </head>
@@ -126,50 +154,49 @@ color:#888;
 <nav>
 <a href="#home">Начало</a>
 <a href="#posters">Постери</a>
-<a href="#order">Поръчка</a>
+<a href="#contact">Контакт</a>
 </nav>
 </header>
 
 <section class="hero" id="home">
 <h2>Performance Posters</h2>
-<p>Премиум автомобилни постери • Тунинг • Performance култура</p>
+<p>Премиум постери за коли • Тунинг • Performance култура</p>
 </section>
 
 <section class="section" id="posters">
 <h2>Нашите постери</h2>
 
-<div class="grid">
+<div class="posters">
 
-<div class="card">
-<img src="poster1.png">
+<div class="poster">
+<img src="poster1.png" alt="BMW M1000RR">
+<h3>BMW M1000RR</h3>
+<a href="#contact" class="btn">Поръчай</a>
+</div>
+
+<div class="poster">
+<img src="poster2.png" alt="MK3 Airlines">
 <h3>MK3 Airlines</h3>
-<button class="btn" onclick="document.getElementById('order').scrollIntoView()">Поръчай</button>
+<a href="#contact" class="btn">Поръчай</a>
 </div>
 
-<div class="card">
-<img src="poster2.png">
-<h3>Audi Q8 340HP</h3>
-<button class="btn" onclick="document.getElementById('order').scrollIntoView()">Поръчай</button>
-</div>
-
-<div class="card">
-<img src="poster3.png">
-<h3>RS7 is coming</h3>
-<button class="btn" onclick="document.getElementById('order').scrollIntoView()">Поръчай</button>
+<div class="poster">
+<img src="poster3.png" alt="Dimitrov BMW">
+<h3>Dimitrov BMW</h3>
+<a href="#contact" class="btn">Поръчай</a>
 </div>
 
 </div>
 </section>
 
-<section class="section" id="order">
+<section class="section" id="contact">
 <h2>Поръчка</h2>
 
-<form class="form-box"
-action="https://formsubmit.co/georgi_kaykov@abv.bg"
-method="POST">
-
+<form action="https://formsubmit.co/georgi_kaykov@abv.bg" method="POST">
 <input type="hidden" name="_subject" value="Нова поръчка от сайта">
 <input type="hidden" name="_captcha" value="false">
+
+<h3>Поръчка на постер</h3>
 
 <input type="text" name="name" placeholder="Име и фамилия" required>
 <input type="tel" name="phone" placeholder="Телефон" required>
@@ -177,8 +204,9 @@ method="POST">
 <input type="text" name="address" placeholder="Адрес за доставка" required>
 <input type="text" name="product" placeholder="Име на постера" required>
 
-<button type="submit" class="btn" style="width:100%">Поръчай</button>
+<button type="submit">🛒 Поръчай</button>
 </form>
+
 </section>
 
 <footer>
