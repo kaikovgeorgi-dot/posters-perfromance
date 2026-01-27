@@ -8,45 +8,32 @@
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#0d0d0d;
+    font-family: Arial, sans-serif;
+    background:#0e0e0e;
     color:white;
 }
 
 header{
     background:#000;
-    padding:15px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    padding:20px;
+    text-align:center;
     border-bottom:2px solid #ff3c00;
 }
 
 header h1{
     color:#ff3c00;
     margin:0;
-    font-size:24px;
-}
-
-nav a{
-    color:white;
-    margin-left:20px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-nav a:hover{
-    color:#ff3c00;
+    font-size:28px;
 }
 
 .hero{
-    background:linear-gradient(120deg,#ff3c00,#1a0000);
-    padding:80px 20px;
+    background:linear-gradient(120deg,#ff3c00,#300000);
+    padding:70px 20px;
     text-align:center;
 }
 
 .hero h2{
-    font-size:40px;
+    font-size:38px;
     margin-bottom:10px;
 }
 
@@ -56,58 +43,63 @@ nav a:hover{
 }
 
 .section{
-    padding:60px 30px;
+    padding:60px 20px;
 }
 
 .section h2{
     text-align:center;
-    margin-bottom:40px;
     color:#ff3c00;
+    margin-bottom:40px;
+    font-size:30px;
 }
 
-/* POSTERS GRID */
-.posters{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+.posters-grid{
+    display:flex;
+    justify-content:center;
 }
 
-.poster{
+.poster-card{
     background:#111;
-    border-radius:12px;
-    padding:15px;
+    border-radius:14px;
+    padding:18px;
     text-align:center;
-    box-shadow:0 0 20px rgba(0,0,0,0.6);
+    max-width:420px;
+    box-shadow:0 0 25px rgba(255,60,0,0.25);
 }
 
-.poster img{
+.poster-card img{
     width:100%;
-    border-radius:10px;
+    border-radius:12px;
     margin-bottom:15px;
 }
 
-.poster h3{
+.poster-card h3{
     margin:10px 0;
 }
 
 .btn{
     display:inline-block;
-    padding:10px 20px;
     background:#ff3c00;
     color:white;
+    padding:12px 25px;
+    border-radius:8px;
     text-decoration:none;
-    border-radius:6px;
     font-weight:bold;
+    transition:0.3s;
 }
 
 .btn:hover{
-    background:#ff5a26;
+    background:#ff5a2a;
 }
 
-/* FORM */
+#order{
+    background:#0b0b0b;
+    padding:60px 20px;
+}
+
 form{
     max-width:420px;
-    margin:40px auto;
+    margin:auto;
     background:#111;
     padding:25px;
     border-radius:12px;
@@ -116,33 +108,35 @@ form{
 form h3{
     text-align:center;
     color:#ff3c00;
+    margin-bottom:20px;
 }
 
-form input{
+form input, form button{
     width:100%;
     padding:12px;
-    margin:8px 0;
-    border:none;
+    margin-bottom:10px;
     border-radius:6px;
+    border:none;
 }
 
 form button{
-    width:100%;
-    padding:12px;
     background:#ff3c00;
     color:white;
-    border:none;
-    border-radius:6px;
-    font-size:16px;
+    font-weight:bold;
     cursor:pointer;
 }
 
+form button:hover{
+    background:#ff5a2a;
+}
+
 footer{
+    background:#000;
     text-align:center;
     padding:20px;
-    background:#000;
-    border-top:2px solid #ff3c00;
-    margin-top:60px;
+    margin-top:50px;
+    font-size:14px;
+    opacity:0.7;
 }
 </style>
 </head>
@@ -150,65 +144,45 @@ footer{
 <body>
 
 <header>
-<h1>Posters Performance</h1>
-<nav>
-<a href="#home">Начало</a>
-<a href="#posters">Постери</a>
-<a href="#contact">Контакт</a>
-</nav>
+    <h1>Posters Performance</h1>
 </header>
 
-<section class="hero" id="home">
-<h2>Performance Posters</h2>
-<p>Премиум постери за коли • Тунинг • Performance култура</p>
+<section class="hero">
+    <h2>Performance Posters</h2>
+    <p>Премиум постери за коли • Тунинг • Performance култура</p>
 </section>
 
-<section class="section" id="posters">
-<h2>Нашите постери</h2>
+<section class="section">
+    <h2>Нашият постер</h2>
 
-<div class="posters">
-
-<div class="poster">
-<img src="images/poster1.png" alt="Poster 1">
-<a href="#contact" class="btn">Поръчай</a>
-</div>
-
-<div class="poster">
-<img src="poster2.pnd">
-<img src="images/poster3.png" alt="Poster 3">
-<a href="#contact" class="btn">Поръчай</a>
-</div>
-
-<div class="poster">
-<img src="images/poster3.png" alt="Poster 2">
-<a href="#contact" class="btn">Поръчай</a>
-</div>
-
-</div>
+    <div class="posters-grid">
+        <div class="poster-card">
+            <img src="https://i.ibb.co/3yNbJnQP/Chat-GPT-Image-16-01-2026-15-49-44.png" alt="Poster">
+            <h3>Performance Poster</h3>
+            <a href="#order" class="btn">Поръчай</a>
+        </div>
+    </div>
 </section>
 
-<section class="section" id="contact">
-<h2>Поръчка</h2>
+<section id="order">
+    <form action="https://formsubmit.co/georgi_kaykov@abv.bg" method="POST">
+        <input type="hidden" name="_subject" value="Нова поръчка от сайта">
+        <input type="hidden" name="_captcha" value="false">
 
-<form action="https://formsubmit.co/georgi_kaykov@abv.bg" method="POST">
-<input type="hidden" name="_subject" value="Нова поръчка от сайта">
-<input type="hidden" name="_captcha" value="false">
+        <h3>Поръчка на постер</h3>
 
-<h3>Поръчка на постер</h3>
+        <input type="text" name="name" placeholder="Име и фамилия" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <input type="email" name="email" placeholder="Имейл" required>
+        <input type="text" name="address" placeholder="Адрес за доставка" required>
+        <input type="text" name="product" placeholder="Име на постера" required>
 
-<input type="text" name="name" placeholder="Име и фамилия" required>
-<input type="tel" name="phone" placeholder="Телефон" required>
-<input type="email" name="email" placeholder="Имейл" required>
-<input type="text" name="address" placeholder="Адрес за доставка" required>
-<input type="text" name="product" placeholder="Име на постера" required>
-
-<button type="submit">🛒 Поръчай</button>
-</form>
-
+        <button type="submit">Поръчай</button>
+    </form>
 </section>
 
 <footer>
-© 2026 Posters Performance | All rights reserved
+    © 2026 Posters Performance | All rights reserved
 </footer>
 
 </body>
