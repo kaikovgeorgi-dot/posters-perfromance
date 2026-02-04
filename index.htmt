@@ -23,11 +23,16 @@ header h1{
     margin:0;
     font-size:28px;
 }
+
+/* 🔥 HERO С РЕКЛАМНА СНИМКА – ЕДИНСТВЕНАТА ПРОМЯНА */
 .hero{
-    background:linear-gradient(120deg,#ff3c00,#300000);
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("hero.jpg") center/cover no-repeat;
     padding:70px 20px;
     text-align:center;
 }
+
 .hero h2{
     font-size:38px;
     margin-bottom:10px;
@@ -36,6 +41,7 @@ header h1{
     font-size:18px;
     opacity:0.9;
 }
+
 .section{
     padding:60px 20px;
 }
@@ -157,7 +163,6 @@ footer{
         <div class="poster-card"><img src="https://i.ibb.co/HfMYqgnv/Chat-GPT-Image-28-01-2026-06-48-40.png"><h3>Poster 11</h3><a href="#order" class="btn">Поръчай</a></div>
         <div class="poster-card"><img src="https://i.ibb.co/JR16sg6T/Chat-GPT-Image-28-01-2026-08-06-20.png"><h3>Poster 12</h3><a href="#order" class="btn">Поръчай</a></div>
 
-        <!-- NEW POSTER 13 -->
         <div class="poster-card">
             <img src="https://i.ibb.co/V0dxS8sH/Chat-GPT-Image-28-01-2026-12-58-28.png">
             <h3>Poster 13</h3>
