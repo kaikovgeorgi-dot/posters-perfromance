@@ -11,6 +11,7 @@ body{
     font-family: Arial, sans-serif;
     background:#0e0e0e;
     color:white;
+    overflow-x:hidden;
 }
 header{
     background:#000;
@@ -24,7 +25,7 @@ header h1{
     font-size:28px;
 }
 
-/* 🔥 HERO С РЕКЛАМНА СНИМКА – ЕДИНСТВЕНАТА ПРОМЯНА */
+/* HERO С РЕКЛАМНА СНИМКА */
 .hero{
     background:
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
@@ -32,7 +33,6 @@ header h1{
     padding:70px 20px;
     text-align:center;
 }
-
 .hero h2{
     font-size:38px;
     margin-bottom:10px;
@@ -91,6 +91,7 @@ header h1{
 .btn:hover{
     background:#ff5a2a;
 }
+
 #order{
     background:#0b0b0b;
     padding:60px 20px;
@@ -131,6 +132,24 @@ footer{
     font-size:14px;
     opacity:0.7;
 }
+
+/* ❤️ ЕФЕКТ СЪРЦА */
+.heart{
+    position:fixed;
+    top:-10px;
+    font-size:16px;
+    color:#ff3c00;
+    animation:fall linear forwards;
+    pointer-events:none;
+    z-index:9999;
+    opacity:0.8;
+}
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
 </style>
 </head>
 
@@ -149,7 +168,6 @@ footer{
     <h2>Нашите постери</h2>
 
     <div class="posters-grid">
-
         <div class="poster-card"><img src="https://i.ibb.co/3yNbJnQP/Chat-GPT-Image-16-01-2026-15-49-44.png"><h3>Poster 1</h3><a href="#order" class="btn">Поръчай</a></div>
         <div class="poster-card"><img src="https://i.ibb.co/DgQGzpT1/Chat-GPT-Image-15-01-2026-21-58-01.png"><h3>Poster 2</h3><a href="#order" class="btn">Поръчай</a></div>
         <div class="poster-card"><img src="https://i.ibb.co/93yKmsg8/Chat-GPT-Image-20-01-2026-17-51-06.png"><h3>Poster 3</h3><a href="#order" class="btn">Поръчай</a></div>
@@ -162,13 +180,6 @@ footer{
         <div class="poster-card"><img src="https://i.ibb.co/m5fj5Fxy/Untitled.png"><h3>Poster 10</h3><a href="#order" class="btn">Поръчай</a></div>
         <div class="poster-card"><img src="https://i.ibb.co/HfMYqgnv/Chat-GPT-Image-28-01-2026-06-48-40.png"><h3>Poster 11</h3><a href="#order" class="btn">Поръчай</a></div>
         <div class="poster-card"><img src="https://i.ibb.co/JR16sg6T/Chat-GPT-Image-28-01-2026-08-06-20.png"><h3>Poster 12</h3><a href="#order" class="btn">Поръчай</a></div>
-
-        <div class="poster-card">
-            <img src="https://i.ibb.co/V0dxS8sH/Chat-GPT-Image-28-01-2026-12-58-28.png">
-            <h3>Poster 13</h3>
-            <a href="#order" class="btn">Поръчай</a>
-        </div>
-
     </div>
 </section>
 
@@ -178,13 +189,11 @@ footer{
         <input type="hidden" name="_captcha" value="false">
 
         <h3>Поръчка на постер</h3>
-
         <input type="text" name="name" placeholder="Име и фамилия" required>
         <input type="tel" name="phone" placeholder="Телефон" required>
         <input type="email" name="email" placeholder="Имейл" required>
         <input type="text" name="address" placeholder="Адрес за доставка" required>
         <input type="text" name="product" placeholder="Име на постера" required>
-
         <button type="submit">Поръчай</button>
     </form>
 </section>
@@ -192,6 +201,21 @@ footer{
 <footer>
     © 2026 Posters Performance | All rights reserved
 </footer>
+
+<!-- ❤️ SCRIPT ЗА СЪРЦАТА -->
+<script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(3+Math.random()*3)+"s";
+    heart.style.fontSize=(12+Math.random()*14)+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,200);
+</script>
 
 </body>
 </html>
